@@ -24,7 +24,7 @@ char * ReplaceVariableName(char * source, int * sourceLength, char * initialName
 char * ReplaceFunctionName(char * source, int * sourceLength, char * initialName, char * finalName);
 char * RemoveUnsupportedExtensions(char * source);
 int doesShaderVersionContainsES(const char * source);
-char *ReplacePrecisionQualifiers(char *source, int *sourceLength);
+char *ReplacePrecisionQualifiers(char *source, int *sourceLength, int isVertex);
 char * GetClosingTokens(char openingToken);
 int isOpeningToken(char openingToken);
 int GetClosingTokenPosition(const char * source, int initialTokenPosition);
@@ -34,6 +34,7 @@ unsigned long strstrPos(const char * haystack, const char * needle);
 char * insertIntAtFunctionCall(char * source, int * sourceSize, const char * functionName, int argumentPosition);
 char * InsertExtension(char * source, int * sourceLength, int insertPoint, const char * extension);
 char * InsertExtensions(char *source, int *sourceLength);
+int GetShaderVersion(const char * source);
 
 
 char* GetOperandFromOperator(char* source, int operatorIndex, int rightOperand, int * limit);
