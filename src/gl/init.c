@@ -143,7 +143,8 @@ void initialize_gl4es() {
 		globals4es.es=ReturnEnvVarInt("LIBGL_ES");
     switch(globals4es.es) {
       case 1:
-      case 2:   
+      case 2:
+      case 3:
         break;
       default:
         // automatic ES backend selection
@@ -178,7 +179,7 @@ void initialize_gl4es() {
         break;
     }
 
-    SHUT_LOGD("Using GLES %s backend\n", (globals4es.es==1)?"1.1":"2.0");
+    SHUT_LOGD("Using GLES %s backend\n", (globals4es.es==1)?"1.1":"3.2");
 
     env(LIBGL_NODEPTHTEX, globals4es.nodepthtex, "Disable usage of Depth Textures");
 
